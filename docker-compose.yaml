@@ -5,7 +5,7 @@ services:
     ports:
       - 9042:9042
     volumes:
-      - .data/cassandra/apps/cassandra:/var/lib/cassandra
+      - ./data/cassandra/apps/cassandra:/var/lib/cassandra
     environment:
       - CASSANDRA_CLUSTER_NAME=cassandra
 
@@ -22,9 +22,9 @@ services:
     container_name: Neo4j-test
     image: neo4j
     volumes:
-      - ./neo4j/data:/data
-      - ./neo4j/plugins:/plugins
-      - ./neo4j/import:/import
+      - ./data/neo4j/data:/data
+      - ./data/neo4j/plugins:/plugins
+      - ./data/neo4j/import:/import
     ports:
       - 7474:7474
       - 7687:7687
