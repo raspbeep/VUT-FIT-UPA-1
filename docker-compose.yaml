@@ -14,6 +14,8 @@ services:
     restart: always
     ports:
       - 27017:27017
+    volumes:
+      - ./data/mongo/data:/data/db
     environment:
       MONGO_INITDB_ROOT_USERNAME: root
       MONGO_INITDB_ROOT_PASSWORD: root
@@ -52,5 +54,5 @@ services:
     ports:
       - "8086:8086"
     volumes:
-      - ./influx/appdata/influxdb2/config:/etc/influxdb2
-      - ./influx/appdata/influxdb2/db:/var/lib/influxdb2
+      - ./data/influx/appdata/influxdb2/config:/etc/influxdb2
+      - ./data/influx/appdata/influxdb2/db:/var/lib/influxdb2
