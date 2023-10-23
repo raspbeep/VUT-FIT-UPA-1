@@ -10,13 +10,13 @@ install:
 	pip install -r scripts/requirements.txt
 
 mongo:
-	$(PYTHON) $(SCRIPTS)/mongo.py
+	$(PYTHON) $(SCRIPTS_DIR)/mongo.py
 
 cassandra:
-	$(PYTHON) $(SCRIPTS)/cassandra.py
+	$(PYTHON) $(SCRIPTS_DIR)/cassandra_script.py
 
 influx:
-	$(PYTHON) $(SCRIPTS)/influx.py
+	$(PYTHON) $(SCRIPTS_DIR)/influx.py
 
 neo4j:
-	$(PYTHON) $(SCRIPTS)/neo4j.py
+	$(PYTHON) $(SCRIPTS_DIR)/neo4j.py

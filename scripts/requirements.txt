@@ -1,1 +1,5 @@
+# mongodb
 pymongo
+
+# cassandra
+cassandra-driver
