@@ -87,7 +87,7 @@ def create_table():
             pm10_24h    float,
             pm2_5_1h    float,
             globalid    text,
-            PRIMARY KEY ((name, code), actualized)
+            PRIMARY KEY ((name, code), actualized, objectid)
         )
         """)
 
@@ -106,9 +106,14 @@ def insert_data():
     print('done')
 
 
+def update_data():
+    session.execute("UPDATE upa.measurements SET so2_1h = 42.0, no2_1h = 42.0 WHERE name = 'Brno-Svatoplukova' AND code='BBMSA' AND objectid = 97368 AND actualized = '2022-10-22 07:30:56.000000+0000'")
+
 load_dataset()
 drop_keyspace()
 create_and_set_keyspace()
 create_table()
 prepare_statement()
 insert_data()
+
+update_data()

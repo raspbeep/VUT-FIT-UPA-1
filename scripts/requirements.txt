@@ -3,3 +3,10 @@ pymongo
 
 # cassandra
 cassandra-driver
+
+# neo4j
+neo4j
+pandas
+
+# influx
+influxdb_client
