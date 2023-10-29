@@ -1,9 +1,7 @@
 from datetime import datetime
 import geojson
 
-from cassandra import ConsistencyLevel
 from cassandra.cluster import Cluster
-from cassandra.query import SimpleStatement
 from cassandra.query import UNSET_VALUE
 
 class Measurement:
@@ -29,14 +27,13 @@ class Measurement:
 measurements = []
 
 def load_dataset():
-    with open("./datasets/cassandra_kvalita_ovzdusi.geojson", "r") as f:
+    with open("./cassandra_kvalita_ovzdusi.geojson", "r") as f:
         geojson_data = geojson.load(f)
         for measurement in geojson_data["features"]:
             mdict = measurement["properties"]
             m = Measurement(
                 mdict["objectid"],
                 mdict["code"],
-                # UNSET_VALUE if mdict["code"] is None else mdict["code"],
                 mdict["name"],
                 mdict["owner"],
                 float(mdict["lat"]),

@@ -6,7 +6,7 @@ from influxdb_client import BucketsApi
 import random
 from datetime import datetime, timedelta
 
-df = pd.read_csv('nehody.csv', low_memory=False)
+df = pd.read_csv('influx_dopavni_nehody.csv', low_memory=False)
 
 columns_to_keep = ['id', 'usmrceno_os', 'tezce_zran_os', 'lehce_zran_os', 'hmotna_skoda', 'datum']
 

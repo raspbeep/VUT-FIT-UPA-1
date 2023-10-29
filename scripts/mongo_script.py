@@ -73,7 +73,7 @@ class Personality:
 
 def load_dataset():
     global personalities
-    with open("./datasets/mongo_vyznamne_osobnosti.geojson", "r") as f:
+    with open("./mongo_vyznamne_osobnosti.geojson", "r") as f:
         geojson_data = geojson.load(f)
         for personality in geojson_data["features"]:
             p, g = personality["properties"], personality["geometry"]

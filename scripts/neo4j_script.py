@@ -1,7 +1,7 @@
 from neo4j import GraphDatabase
 import pandas as pd
 
-file_path = 'financne_toky.csv'
+file_path = 'neo4j_financni_toky.csv'
 
 df = pd.read_csv(file_path)
 
